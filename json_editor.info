@@ -1,0 +1,4 @@
+name = Json editor
+description = "Json editor display formatter"
+package = Web Solutions
+core = 7.x
