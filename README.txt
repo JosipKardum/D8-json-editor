@@ -1,22 +1,25 @@
 == Introduction ==
 
-Json editor is text formatter for drupal.
+Json Editor is text formatter for drupal.
 
 == Requirements ==
 
-Download jsoneditor-master from https://github.com/josdejong/jsoneditor/
+jsoneditor from: https://github.com/josdejong/jsoneditor/
 
 == Installation ==
 
-Extract json-editor-module to your sites/all/modules directory
-Extract jsoneditor-master from jsoneditor-master.zip to your sites/all/modules/json-editor-module directory
-Enable the Json editor module in admin/modules
-== Using Json editor ==
+Extract json_editor to your sites/all/modules directory
+Clone jsoneditor to your sites/all/modules/json_editor directory
+using command code: git clone https://github.com/josdejong/jsoneditor/
+Enable the Json Editor module in admin/modules
+
+== Using Json Editor ==
 
 Open content type and click on "Manage fields"
 Create new field and set field type as "Text long" (text_long) or "Text long and summary" (text_with_summary).
-Click on "Manage display" and choose "Json editor" format for your created field.
+Click on "Manage display" and choose "Json Editor" format for your created field as display.
 
 == Sponsored by ==
 
-This module has been originally developed under the sponsorship of the Web Solutions HR (http://websolutions.hr).
+This module has been originally developed under the sponsorship of 
+the Web Solutions HR (http://websolutions.hr).
