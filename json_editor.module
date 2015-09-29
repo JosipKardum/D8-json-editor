@@ -9,7 +9,7 @@
 function json_editor_field_formatter_info() {
   return array(
     'json_editor' => array(
-      'label' => t('Json editor'),
+      'label' => t('Json Editor'),
         'field types' => array('text_long', 'text_with_summary'),
       ),
   );
@@ -39,11 +39,11 @@ function json_editor_field_formatter_view($entity_type, $entity, $field, $instan
     case 'json_editor':
       $element = array();
       drupal_add_js(drupal_get_path('module', 'json_editor') . '/js/jquery-2.0.3.js');
-      drupal_add_css(drupal_get_path('module', 'json_editor') . '/css/jsoneditor-min.css');
+      drupal_add_css(drupal_get_path('module', 'json_editor') . '/jsoneditor/jsoneditor-min.css');
       drupal_add_css(drupal_get_path('module', 'json_editor') . '/css/jquery-ui.css');
       drupal_add_css(drupal_get_path('module', 'json_editor') . '/css/json_editor.css');
       drupal_add_js(drupal_get_path('module', 'json_editor') . '/js/jquery-ui.js');
-      drupal_add_js(drupal_get_path('module', 'json_editor') . '/jsoneditor-master/jsoneditor-min.js');
+      drupal_add_js(drupal_get_path('module', 'json_editor') . '/jsoneditor/jsoneditor-min.js');
       drupal_add_js(drupal_get_path('module', 'json_editor') . '/js/jquery-noconflict.js');
       foreach ($items as $delta => $item) {
         $entity_id=$entity->vid;

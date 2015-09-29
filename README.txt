@@ -20,4 +20,3 @@ Click on "Manage display" and choose "Json editor" format for your created field
 == Sponsored by ==
 
 This module has been originally developed under the sponsorship of the Web Solutions HR (http://websolutions.hr).
-

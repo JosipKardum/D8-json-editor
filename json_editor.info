@@ -1,4 +1,4 @@
-name = Json editor
-description = "Json editor display formatter"
-package = Web Solutions
+name = Json Editor
+description = "Json Editor display formatter"
+package = WEBSOLUTIONS.hr modules
 core = 7.x
