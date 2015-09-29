@@ -2,15 +2,9 @@
 
 Json Editor is text formatter for drupal.
 
-== Requirements ==
-
-jsoneditor from: https://github.com/josdejong/jsoneditor/
-
 == Installation ==
 
 Extract json_editor to your sites/all/modules directory
-Clone jsoneditor to your sites/all/modules/json_editor directory
-using command code: git clone https://github.com/josdejong/jsoneditor/
 Enable the Json Editor module in admin/modules
 
 == Using Json Editor ==
