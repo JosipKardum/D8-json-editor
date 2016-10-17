@@ -21,6 +21,16 @@ function json_editor_field_formatter_info() {
  */
 function json_editor_menu() {
   $items = array();
+  
+  $items['admin/config/development/json_editor'] = array(
+    'title' => 'JSON Editor',
+    'description' => 'JSON Editor text format.',
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('json_editor_options_form'),
+    'access arguments' => array('administer access control'),
+    'type' => MENU_NORMAL_ITEM,
+  );
+  
   $items['js_editor/download/%/%/%'] = array(
     'title' => 'Downloading json...',
     'page callback' => 'json_editor_download_json',
@@ -56,11 +66,51 @@ function json_editor_field_formatter_view($entity_type, $entity, $field, $instan
           var editor = new jsoneditor.JSONEditor(container);
           var traffic = ' . $json . ';
           editor.set(traffic);});', 'inline');
-        $element[$delta] = array('#markup' => $div_jsoneditor . $download_button);
+        if(variable_get('json_editor_download_display', NULL) == 'no') {
+	        $element[$delta] = array('#markup' => $div_jsoneditor);
+        } else {
+	        $element[$delta] = array('#markup' => $div_jsoneditor . $download_button);
+        }
       }
       break;
   }
   return $element;
+}
+
+/**
+ * Implements hook_form().
+ */
+function json_editor_options_form($form, &$form_state) {
+  if(variable_get('json_editor_download_display', NULL) == NULL) {
+	  variable_set('json_editor_download_display', 'yes');
+  }
+  $active_value = variable_get('json_editor_download_display', NULL);
+  $active = array('no' => t('No'), 'yes' => t('Yes'));
+  $form['json_editor_download'] = array(
+    '#type' => 'radios',
+    '#default_value' => $active_value,
+    '#title' => t('Display "Download json" link'),
+    '#options' => $active,
+  );
+
+  $form['submit'] = array(
+    '#type' => 'submit',
+    '#value' => 'Save options',
+  );
+  return $form;
+}
+
+/**
+ * Lock form submit.
+ */
+function json_editor_options_form_submit($form, &$form_state) {
+  $option_active = $form_state['values']['json_editor_download'];
+  if ($option_active == 'yes') {
+    variable_set('json_editor_download_display', $option_active);
+  }
+  elseif ($option_active == 'no') {
+    variable_set('json_editor_download_display', $option_active);
+  }
 }
 
 function json_editor_download_json($nid, $field_name, $delta) {
