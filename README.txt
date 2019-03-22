@@ -24,6 +24,12 @@ JSON Editor is a tool to view, edit, format, and validate JSON. Its based on JSO
     One line:
     - $ drush en json_editor && drush cr && drush jedl
 
+2. Manually
+    1. Download & extract "Json Editor"
+        (https://github.com/josdejong/jsoneditor/archive/master.zip) and place inside "/libraries/jsoneditor" directory.
+    2. Download & extract "File Saver"
+        (https://github.com/eligrey/FileSaver.js/archive/master.zip) and place inside "/libraries/filesaver" directory.
+
 == USAGE ==
 
 Open content type and click on "Manage fields"
