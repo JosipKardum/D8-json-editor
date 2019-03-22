@@ -1,5 +1,0 @@
-name = Json Editor
-description = "Json Editor display formatter"
-package = WEBSOLUTIONS.hr modules
-core = 7.x
-configure = admin/config/development/json_editor
